@@ -18,4 +18,5 @@ public class Controller {
 	
 	//NUOVO COMMIT DI PROVA
 	int z;
+	int w;
 }
