@@ -15,4 +15,7 @@ public class Controller {
 	public void setY(int y) {
 		this.y = y;
 	}
+	
+	//NUOVO COMMIT DI PROVA
+	int z;
 }
