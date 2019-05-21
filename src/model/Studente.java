@@ -8,7 +8,7 @@ public class Studente {
 	
 	
 	public Long getId() {
-		return id;
+		return id;sdwhdiwi
 	}
 	public void setId(Long id) {
 		this.id = id;
