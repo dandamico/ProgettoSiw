@@ -8,7 +8,7 @@
 <title>Lista studenti</title>
 </head>
 <body>
-	<h1>Elenco Studenti</h1>
+	<h1>ElencoStudenti</h1>
 	<table>
 	<tr><th>Nome</th> <th>Cognome</th></tr>
 		<c:forEach var="studente" items="${studenti}">
