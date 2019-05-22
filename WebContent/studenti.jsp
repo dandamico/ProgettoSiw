@@ -14,7 +14,7 @@
 		<c:forEach var="studente" items="${studenti}">
 			<tr>
 				<td>${studente.nome}</td>
-				<td><a href="studenteController?id=${studente.id}">${studente.cognome}</a></td>
+				<td><a href="studenteController/${studente.id}">${studente.cognome}</a></td>
 			</tr>
 	</c:forEach>
 	</table>
