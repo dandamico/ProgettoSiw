@@ -1,15 +1,32 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Prodotto {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	
+	@Column(nullable=false)
 	private String nome;
+	@Column(length=2000)
 	private String descrizione;
+	@Column(nullable=false)
 	private float prezzo;
 	
+	@ManyToOne
 	private Fornitore fornitore;
-	private Categoria categoriaProdotto;
 	
+	@ManyToOne
+	private Categoria categoriaProdotto;
+
 	
 	
 	public Fornitore getFornitore() {
