@@ -8,7 +8,6 @@ public class Utente {
 	private String cognome;
 	private LocalDate dataDiNascita;
 	
-	private Prodotto prodotto;
 	
 	
 	

@@ -5,6 +5,8 @@ public class Admin {
 	private String cognome;
 	private String password;
 	
+	private Prodotto prodotto;
+	
 	
 	public String getNome() {
 		return nome;
@@ -23,6 +25,12 @@ public class Admin {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Prodotto getProdotto() {
+		return prodotto;
+	}
+	public void setProdotto(Prodotto prodotto) {
+		this.prodotto = prodotto;
 	}
 		
 }
