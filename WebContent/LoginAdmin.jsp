@@ -29,10 +29,6 @@
             </div>
           </div>
           <div class="control-group">
-            <label id="remember-me">
-              <input type="checkbox" name="data[User][remember_me]" value="1" id="UserRememberMe"> Remember Me?</label>
-          </div>
-          <div class="control-group">
             <input class="btn btn-primary btn-large btn-block" type="submit" value="Sign in"> 
             
           </div>
