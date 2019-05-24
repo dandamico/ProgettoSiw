@@ -18,7 +18,7 @@ public class Categoria {
 	
 	@Column(nullable=false)
 	private String nome;
-	
+	//ciaoaosdaosdoashdofhasofhasuofh
 	@OneToMany(mappedBy="categoriaProdotto")
 	private List<Prodotto> prodotti;
 
