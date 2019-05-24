@@ -55,10 +55,5 @@ public class Admin {
 	public void setProdotto(Prodotto prodotto) {
 		this.prodotto = prodotto;
 	}
-		
 
 }
-
-}
-
-//commenta66
