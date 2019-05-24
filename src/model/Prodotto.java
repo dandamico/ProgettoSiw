@@ -20,6 +20,8 @@ public class Prodotto {
 	private String descrizione;
 	@Column(nullable=false)
 	private float prezzo;
+	@Column(nullable = false)
+	private int pezziVenduti;
 	
 	@ManyToOne
 	private Fornitore fornitore;
