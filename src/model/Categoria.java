@@ -41,4 +41,6 @@ public class Categoria {
 		this.prodotti = prodotti;
 	}
 	
+	int x;
+	
 }
