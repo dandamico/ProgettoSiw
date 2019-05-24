@@ -11,22 +11,22 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Categoria {
-
+	//categoriaaa
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
 	@Column(nullable=false)
-	private String nome;
+	private String nomee;
 	
 	@OneToMany(mappedBy="categoriaProdotto")
 	private List<Prodotto> prodotti;
 
 	public String getNome() {
-		return nome;
+		return nomee;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nomee = nome;
 	}
 	public Long getId() {
 		return id;
