@@ -14,25 +14,25 @@ public class Categoria {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private Long iidd;
 	
 	@Column(nullable=false)
-	private String nome;
+	private String nomne;
 	
 	@OneToMany(mappedBy="categoriaProdotto")
 	private List<Prodotto> prodotti;
 
 	public String getNome() {
-		return nome;
+		return nomne;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nomne = nome;
 	}
 	public Long getId() {
-		return id;
+		return iidd;
 	}
 	public void setId(Long id) {
-		this.id = id;
+		this.iidd = id;
 	}
 	public List<Prodotto> getProdotti() {
 		return prodotti;
