@@ -8,6 +8,8 @@ public class HelperAdmin {
 
 		String email = request.getParameter("email").toUpperCase().trim();   //trim() elimina gli spazi all'inizio e alla fine
 		String password = request.getParameter("password").toUpperCase().trim();
+		String email1="federico.giuliana@gmail.com";
+		String pass="1234";
 
 		boolean errore = false;
 
@@ -15,6 +17,11 @@ public class HelperAdmin {
 			String  mess = "L'email un campo obbligatorio";
 			request.setAttribute("emailErr", mess );  //Passo alla form il messaggio di errore
 			errore = true;
+		}
+		if(email.equals(email1)) {
+			if(password.equals(pass)) {
+				
+			}
 		}
 
 		if(password.isEmpty()) {

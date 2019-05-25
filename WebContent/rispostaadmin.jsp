@@ -2,13 +2,13 @@
 <html>
 <body>
 	<p>
-		Nome: ${adminForm.nome}
+		Nome: ${AdminForm.nome}
 		</p>
 		<p>
-		Cognome: ${adminForm.cognome}
+		Cognome: ${AdminForm.cognome}
 	</p>
 	<p>Sei sicuro di voler procedere con questi dati?</p>
 	<p>
-		<a href="conferma"> Conferma Definitiva </a>
+		<a href="confermaadmin"> Conferma Definitiva </a>
 	</p>
 </html>
