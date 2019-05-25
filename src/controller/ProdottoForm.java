@@ -1,9 +1,10 @@
 package controller;
 
 public class ProdottoForm {
+	private Long id;
 	private String nome;
 	private String descrizione;
-	private float prezzo;
+	private int prezzo;
 	
 	
 	public String getNome() {
@@ -19,10 +20,16 @@ public class ProdottoForm {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public float getPrezzo() {
+	public int getPrezzo() {
 		return prezzo;
 	}
-	public void setPrezzo(float prezzo) {
+	public void setPrezzo(int prezzo) {
 		this.prezzo = prezzo;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 }
