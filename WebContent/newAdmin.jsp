@@ -11,7 +11,6 @@
 			<input type="text" placeholder="Email" name="email"> 
 			<span class="error">  ${emailErr}
 			</span>
-			<div></div>
 			<input type="password" placeholder="password" name="password">
 			<span class="error">  ${passErr}
 			</span>
