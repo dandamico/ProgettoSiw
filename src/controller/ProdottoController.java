@@ -28,22 +28,22 @@ public class ProdottoController extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//Lettura dei parametri
-		ProdottoValido prodottoNonValido = new ProdottoValido();
+		HelperProdotto helperProdotto = new HelperProdotto();
 		ProdottoForm prodottoForm = new ProdottoForm();
 		HttpSession session =  request.getSession();
 			
 		//Gestione risposta
 		String nextPage;
 		
-		if(prodottoNonValido.NoValido(request)) {		//Se risulta True "NoValido" i dati inseriti non sono validi, quindi torna alla form del prodotto
+		if(helperProdotto.NoValido(request)) {		//Se risulta True "NoValido" i dati inseriti non sono validi, quindi torna alla form del prodotto
 			nextPage = "/newProdotto.jsp";
 		}
 		
 		else {
 			prodottoForm.setNome(request.getParameter("nome").toUpperCase());
-			prodottoForm.setPrezzo((int) request.getAttribute("prezzo"));
+			prodottoForm.setPrezzo(request.getParameter("prezzo"));
 			prodottoForm.setDescrizione(request.getParameter("descrizione"));
-			session.setAttribute("prodottoForm", prodottoForm);
+			session.setAttribute("ProdottoForm", prodottoForm);
 			nextPage="/rispostaProdotto.jsp";			
 		}
 		

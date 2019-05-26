@@ -10,9 +10,9 @@
 	<p>
 	<h1>I dati salvati del prodotto sono:</h1>
 	<p>
-	Nome: ${prodottoForm.nome} 
-	Descrizione: ${prodottoForm.descrizione}
-	Prezzo: ${prodottoForm.prezzo}
+	Nome: ${ProdottoForm.nome} 
+	Descrizione: ${ProdottoForm.descrizione}
+	Prezzo: ${ProdottoForm.prezzo}
 	</p>
 
 </body>

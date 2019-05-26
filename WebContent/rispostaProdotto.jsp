@@ -7,9 +7,9 @@
 <title></title>
 </head>
 <body>
-	<p>Nome: ${prodottoForm.nome}</p>
-	<p>Cognome: ${prodottoForm.cognome}</p>
-	<p>Prezzo: ${prodottoForm.prezzo}</p>
+	<p>Nome: ${ProdottoForm.nome}</p>
+	<p>Descrizione: ${ProdottoForm.descrizione}</p>
+	<p>Prezzo: ${ProdottoForm.prezzo}</p>
 	<p>Sei sicuro di voler procedere con questi dati?</p>
 	<p>
 		<a href="confermaProdotto"> Conferma Definitiva </a>

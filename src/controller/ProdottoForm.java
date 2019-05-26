@@ -4,7 +4,7 @@ public class ProdottoForm {
 	private Long id;
 	private String nome;
 	private String descrizione;
-	private int prezzo;
+	private String prezzo;
 	
 	
 	public String getNome() {
@@ -20,10 +20,10 @@ public class ProdottoForm {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public int getPrezzo() {
+	public String getPrezzo() {
 		return prezzo;
 	}
-	public void setPrezzo(int prezzo) {
+	public void setPrezzo(String prezzo) {
 		this.prezzo = prezzo;
 	}
 	public Long getId() {

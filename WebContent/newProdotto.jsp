@@ -11,9 +11,12 @@
 <body>
 	<form action="prodottoController" method="post">
 		<div class="Inserimento">
-			<input type="text" placeholder="Nome" id="nome">
-			<input type="number" placeholder="Prezzo" id="prezzo">
-			 <input	type="text" placeholder="Descrizione" id="descrizione">
+			<input type="text" placeholder="Nome" name="nome">
+			<span class="error"> ${nomeErr} </span>
+			<input type="text" placeholder="Prezzo" name="prezzo">
+			<span class="error"> ${prezzoErr} </span>
+			 <input	type="text" placeholder="Descrizione" name="descrizione">
+			 <span class="error"> ${descErr} </span>
 			  <input type="submit" value="Prosegui">
 		</div>
 		<div class="shadow"></div>

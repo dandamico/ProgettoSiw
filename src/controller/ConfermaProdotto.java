@@ -26,7 +26,7 @@ public class ConfermaProdotto extends HttpServlet{
 		
 		HttpSession session = request.getSession();			//crea sessione
 		Prodotto prodotto = new Prodotto();					//crea prodotto
-		ProdottoForm prodottoForm = (ProdottoForm) session.getAttribute("studenteForm");		//form del prodotto=la form della sessione corrente
+		ProdottoForm prodottoForm = (ProdottoForm) session.getAttribute("ProdottoForm");		//form del prodotto=la form della sessione corrente
 		//inizializzo i dati
 		prodotto.setNome(prodottoForm.getNome());
 		prodotto.setDescrizione(prodottoForm.getDescrizione());
