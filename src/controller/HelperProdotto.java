@@ -2,13 +2,13 @@ package controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class ProdottoValido {
+public class HelperProdotto {
 	
 	
 	public boolean NoValido(HttpServletRequest request) {
 
 		String nome = request.getParameter("nome").toUpperCase().trim();   //trim() elimina gli spazi all'inizio e alla fine
-		String descrizione = request.getParameter("descirzione");
+		String descrizione = request.getParameter("descrizione");
 		String prezzo = request.getParameter("prezzo");
 
 		boolean errore = false;
