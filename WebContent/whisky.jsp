@@ -8,11 +8,13 @@
 </head>
 <body>
 	<p>
-		<a>Ghiaccio</a>
+		<a>Chivas Regal</a>
 		<br>
-		<a>Ghiaccioli</a>
+		<a>Paddy</a>
 		<br>
-		<a>Ghiaccetti</a>
+		<a>Jack Daniel's</a>
+		<br>
+		<a>Jameson</a>
 	</p>
 </body>
 </html>

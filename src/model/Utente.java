@@ -20,9 +20,18 @@ public class Utente {
 	@Column(nullable=false)
 	private String cognome;
 	@Column(nullable=false)
-	private LocalDate dataDiNascita;
+	private String nascita;
+	@Column(nullable=false)
+	private String indirizzo;
+	@Column(nullable=false)
+	private String email;
 	
-	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -41,11 +50,16 @@ public class Utente {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	public LocalDate getDataDiNascita() {
-		return dataDiNascita;
+	public String getNascita() {
+		return nascita;
 	}
-	public void setDataDiNascita(LocalDate dataDiNascita) {
-		this.dataDiNascita = dataDiNascita;
+	public void setNascita(String string) {
+		this.nascita = string;
 	}
-
+	public String getIndirizzo() {
+		return indirizzo;
+	}
+	public void setIndirizzo(String indirizzo) {
+		this.indirizzo = indirizzo;
+	}
 }
