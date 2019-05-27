@@ -6,11 +6,21 @@
 <!-- Colleghiamo la nostra form alla nostra pagina di stile -->
 <title>Inserimento dati</title>
 </head>
-<body> 
+<header>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+		</ul>
+	</nav>
+</header>
+<body bgcolor="#293133"> 
 <div class="center">
+<section class="form">
+<div class="center">
+	<h1> <b style="color: #daa800 ;">Registrati per continuare!</b></h1>
+	<hr width="20%" style="border: 1px solid #daa800;">
+	<br>
 	<form action="utenteController" method="post">
-		<h3>REGISTRATI PER CONTINUARE</h3>
-		<br>
 		Nome : <input type="text" name="nome" value="${param['nome']}" /> 
 		<span class="error"> ${nomeErr} </span>
 		<div></div>
@@ -25,6 +35,8 @@
 		<div></div>
 		<button>Registrati</button>
 	</form>
+</div>
+</section>
 </div>
 </body>
 </html>
