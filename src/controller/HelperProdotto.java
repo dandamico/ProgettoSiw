@@ -9,25 +9,25 @@ public class HelperProdotto {
 
 		String nome = request.getParameter("nome").toUpperCase().trim();   //trim() elimina gli spazi all'inizio e alla fine
 		String descrizione = request.getParameter("descrizione");
-		String prezzo = request.getParameter("prezzo");
+		String prezzo = request.getParameter("prezzo").trim();
 
 		boolean errore = false;
 
 		if(nome.isEmpty()) {
-			String  mess = "Il nome e' un campo obbligatorio";
+			String  mess = "*campo obbligatorio";
 			request.setAttribute("nomeErr", mess );  //Passo alla form il messaggio di errore
 			errore = true;
 		}
 
 
 		if(descrizione.isEmpty()) {
-			String  mess = "La descrizione e' un campo obbligatorio";
+			String  mess = "*campo obbligatorio";
 			request.setAttribute("descErr", mess );  //Passo alla form il messaggio di errore
 			errore = true;
 		}
 		
 		if(prezzo.isEmpty()) {
-			String  mess = "Il prezzo e' un campo obbligatorio";
+			String  mess = "*campo obbligatorio";
 			request.setAttribute("prezzoErr", mess );  //Passo alla form il messaggio di errore
 			errore = true;
 		}

@@ -1,156 +1,261 @@
-html {
-	height: 100%
+/*elementi che si modificano con dimensione schermo*/
+@media only screen and (max-width: 480px) {
 }
 
-::-moz-selection {
-	background: #fe57a1;
-	color: #fff;
-	text-shadow: none;
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }
 
-::selection {
-	background: #fe57a1;
-	color: #fff;
-	text-shadow: none;
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media only screen and (min-width: 1025px) {
 }
 
 body {
-	background-image: radial-gradient(cover, rgba(92, 100, 111, 1) 0%,
-		rgba(31, 35, 40, 1) 100%), url('http://i.minus.com/io97fW9I0NqJq.png')
-}
-
-.login {
-	background: #eceeee;
-	border: 1px solid #42464b;
-	border-radius: 6px;
-	height: 257px;
-	margin: 20px auto 0;
-	width: 298px;
-}
-
-.login h1 {
-	background-image: linear-gradient(top, #f1f3f3, #d4dae0);
-	border-bottom: 1px solid #a6abaf;
-	border-radius: 6px 6px 0 0;
-	box-sizing: border-box;
-	color: #727678;
-	display: block;
-	height: 43px;
-	font: 600 14px/1 'Open Sans', sans-serif;
-	padding-top: 14px;
+	background-color: #101010;
+	font-family: 'Abel', sans-serif;
+	color: #333;
 	margin: 0;
-	text-align: center;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 #fff;
 }
 
-input[type="password"], input[type="text"] {
-	background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left
-		no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
-	border: 1px solid #a1a3a3;
-	border-radius: 4px;
-	box-shadow: 0 1px #fff;
-	box-sizing: border-box;
-	color: #696969;
-	height: 39px;
-	margin: 31px 0 0 29px;
-	padding-left: 37px;
-	transition: box-shadow 0.3s;
-	width: 240px;
-}
-
-input[type="password"]:focus, input[type="text"]:focus {
-	box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
-	outline: 0;
-}
-
-.show-password {
-	display: block;
-	height: 16px;
-	margin: 26px 0 0 28px;
-	width: 87px;
-}
-
-input[type="checkbox"] {
-	cursor: pointer;
-	height: 16px;
-	opacity: 0;
-	position: relative;
-	width: 64px;
-}
-
-input[type="checkbox"]:checked {
-	left: 29px;
-	width: 58px;
-}
-
-.toggle {
-	background: url(http://i.minus.com/ibitS19pe8PVX6.png) no-repeat;
-	display: block;
-	height: 16px;
-	margin-top: -20px;
-	width: 87px;
-	z-index: -1;
-}
-
-input[type="checkbox"]:checked+.toggle {
-	background-position: 0 -16px
-}
-
-.forgot {
-	color: #7f7f7f;
-	display: inline-block;
-	float: right;
-	font: 12px/1 sans-serif;
-	left: -19px;
-	position: relative;
+a {
+	color: #daa800;
 	text-decoration: none;
-	top: 5px;
-	transition: color .4s;
+	transition: 1s;
 }
 
-.forgot:hover {
-	color: #3b3b3b
+a:hover {
+	text-decoration: none;
+	color: #daa800;
+	opacity: 0.8;
+	transition: 1s;
 }
 
-input[type="submit"] {
-	width: 240px;
-	height: 35px;
+p {
+	color: #cacaca;
+}
+
+h1 {
+	font-weight: normal;
+}
+
+/* =============================================================================== */
+section.form {
+	opacity: 1;
+	background-color: transparent;
+	padding: 20px;
+	text-align: center;
+	color: #cacaca;
+}
+
+.center {
+	margin-right: auto;
+	margin-left: auto;
 	display: block;
-	font-family: Arial, "Helvetica", sans-serif;
-	font-size: 16px;
-	font-weight: bold;
+	width: 400px;
+	margin-top: 100px;
+	margin-bottom: 60px;
+}
+
+input {
+	opacity: 0.3;
+	border-radius: 20px;
+	padding: 10px;
+	width: 80%;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 10px;
+	box-shadow: none;
 	color: #fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	text-align: center;
-	text-shadow: 1px 1px 0px #37a69b;
-	padding-top: 6px;
-	margin: 29px 0 0 29px;
-	position: relative;
-	cursor: pointer;
 	border: none;
-	background-color: #37a69b;
-	background-image: linear-gradient(top, #3db0a6, #3111);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px
-		5px #999;
+	background-color: #5d5d5d;
+	transition: 1s;
+	border: 2px solid transparent;
 }
 
-.shadow {
-	background: #000;
-	border-radius: 12px 12px 4px 4px;
-	box-shadow: 0 0 20px 10px #000;
-	height: 12px;
-	margin: 30px auto;
-	opacity: 0.2;
-	width: 270px;
+input:focus, input:hover {
+	transition: 1s;
+	border: 2px solid #5d5d5d;
+	background-color: transparent;
 }
 
-input[type="submit"]:active {
-	top: 3px;
-	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px
-		3px #999;
+.name-surname {
+	width: 36%;
+	display: inline;
+}
+
+button {
+	width: 86%;
+	border-radius: 20px;
+	background-color: #cacaca;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	box-shadow: none;
+	text-shadow: none;
+	border: none;
+	padding: 10px;
+	font-family: 'Abel', sans-serif;
+	transition: 1s;
+}
+
+button:hover {
+	background-color: #daa800;
+	transition: 1s;
+}
+
+/* ============================================================================================ */
+
+/* FOOTER STARTS HERE */
+footer {
+	background-color: #020202;
+	color: #fff;
+	width: 100%;
+}
+
+.footer_container {
+	padding: 20px;
+	text-align: center;
+	float: none;
+}
+
+.footer_container .bottom_text {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.social_icons {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+/* FOOTER ENDS HERE */
+
+/*  NAVIGATION STARTS HERE */
+.navigation {
+	margin: 0;
+}
+
+.brand { /* Your brand logo */
+	border-right: 0.5px solid #555555;
+	font-size: 16px;
+	line-height: 50px;
+	display: inline;
+	margin-right: 30px;
+	padding-right: 40px;
+}
+
+.nav-container {
+	display: inline;
+}
+
+/* Added font-size: 0; to get rid of the space between lists */
+nav {
+	width: 100%;
+	background-color: #1c1c1c;
+	margin: 0;
+	font-size: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #fff;
+	position: fixed;
+	z-index: 1;
+}
+
+/* Declaring font-size for the anchor element to be 16px since it is 0 on the above code */
+nav a {
+	font-size: 16px;
+}
+
+ul {
+	display: inline;
+	margin: 0;
+	overflow: hidden;
+	list-style-type: none;
+}
+
+/* Adding background color to the li element and vertically centering the words in the li element */
+ul li {
+	display: inline;
+	margin: 0;
+	padding: 14px;
+	line-height: 50px;
+	background-color: #1c1c1c;
+	transition: 1s;
+}
+
+ul li:hover {
+	transition: 1s;
+	background-color: transparent;
+}
+
+ul a { /* Removing the 'underline' from the link */
+	text-decoration: none;
+}
+
+ul a:hover {
+	/* Removing the 'underline' from the link on the 'hover effect' */
+	text-decoration: none;
+}
+
+ul a li {
+	display: inline;
+	text-decoration: none;
+	color: #fff;
+	margin: 0;
+	text-transform: uppercase;
+	background-color: transparent;
+	transition: 1s;
+}
+
+ul a li:hover {
+	transition: 1s;
+	background-color: #101010;
+	color: #daa800;
+}
+
+.left {
+	float: right;
+	margin-right: 30px;
+}
+
+#nav-icon {
+	display: none;
+	transition: 1s;
+}
+
+@media only screen and (max-width: 816px) {
+	nav, .navigation {
+		padding: 0;
+	}
+	.brand {
+		line-height: 50px;
+		border: none;
+		margin-right: auto;
+		margin-right: auto;
+		display: block;
+		width: 100%;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.left {
+		float: none;
+		margin-right: 0;
+		transition: 1s;
+	}
+	nav ul li {
+		display: block;
+		text-align: center;
+		width: 100%;
+		transition: 1s;
+		padding: 7px;
+	}
+	#nav-icon {
+		display: inline;
+		float: right;
+		line-height: 50px;
+	}
 }

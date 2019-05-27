@@ -1,7 +1,6 @@
 package controller;
 
 public class ProdottoForm {
-	private Long id;
 	private String nome;
 	private String descrizione;
 	private String prezzo;
@@ -26,10 +25,5 @@ public class ProdottoForm {
 	public void setPrezzo(String prezzo) {
 		this.prezzo = prezzo;
 	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 }
