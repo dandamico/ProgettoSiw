@@ -36,7 +36,7 @@ public class ConfermaProdotto extends HttpServlet{
 		
 		//Gestione della risposta
 		ServletContext application = getServletContext();
-		RequestDispatcher rd = application.getRequestDispatcher("/fine.jsp");
+		RequestDispatcher rd = application.getRequestDispatcher("/fineProdotto.jsp");
 		rd.forward(request, response);
 		return;
 	}
