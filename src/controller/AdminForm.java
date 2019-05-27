@@ -5,8 +5,6 @@ public class AdminForm {
 	private String nome;
 	private String cognome;
 	
-	
-	
 	public String getNome() {
 		return nome;
 	}

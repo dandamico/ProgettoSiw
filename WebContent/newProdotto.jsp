@@ -11,16 +11,15 @@
 <body>
 	<form action="prodottoController" method="post">
 		<div class="Inserimento">
-			<input type="text" placeholder="Nome" name="nome">
+			<input type="text" placeholder="Nome" name="nome" value="${param['nome']}">
 			<span class="error"> ${nomeErr} </span>
-			<input type="text" placeholder="Prezzo" name="prezzo">
+			<input type="text" placeholder="Prezzo" name="prezzo" value="${param['prezzo']}">
 			<span class="error"> ${prezzoErr} </span>
-			 <input	type="text" placeholder="Descrizione" name="descrizione">
+			 <input	type="text" placeholder="Descrizione" name="descrizione" value="${param['descrizione']}">
 			 <span class="error"> ${descErr} </span>
 			  <input type="submit" value="Prosegui">
 		</div>
 		<div class="shadow"></div>
 	</form>
-
 </body>
 </html>
