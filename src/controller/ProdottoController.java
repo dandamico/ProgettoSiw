@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 //import java.util.List;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -11,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import Services.ProdottoService;
+import model.Prodotto;
 
 //import Services.ProdottoService;
 //import model.Prodotto;
@@ -41,9 +45,9 @@ public class ProdottoController extends HttpServlet{
 		
 		else {
 			prodottoForm.setNome(request.getParameter("nome").toUpperCase());
-			prodottoForm.setPrezzo(request.getParameter("prezzo"));
 			prodottoForm.setDescrizione(request.getParameter("descrizione"));
-			session.setAttribute("ProdottoForm", prodottoForm);
+			prodottoForm.setPrezzo(request.getParameter("prezzo"));
+			session.setAttribute("prodottoForm", prodottoForm);
 			nextPage="/rispostaProdotto.jsp";			
 		}
 		
@@ -55,6 +59,7 @@ public class ProdottoController extends HttpServlet{
 	}
 	
 	/*
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nextPage = "/prodotti.jsp";
@@ -78,5 +83,4 @@ public class ProdottoController extends HttpServlet{
 		rd.forward(request, response);
 	}
 	*/
-	
 }
