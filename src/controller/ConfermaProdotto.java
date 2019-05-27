@@ -20,7 +20,6 @@ public class ConfermaProdotto extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -40,8 +39,5 @@ public class ConfermaProdotto extends HttpServlet{
 		RequestDispatcher rd = application.getRequestDispatcher("/fineProdotto.jsp");
 		rd.forward(request, response);
 		return;
-
-		
-		
 	}
 }

@@ -10,15 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
  
- 
- 
- 
 @WebServlet("/adminController")
 public class AdminController extends HttpServlet {
  
-    /**
-     * 
-     */
     private static final long serialVersionUID = 1L;
  
     @Override
@@ -34,24 +28,18 @@ public class AdminController extends HttpServlet {
  
         if(helperadmin.IsNotValid(request)) {
             nextPage = "/newAdmin.jsp";
- 
         }
         else {
             adminForm.setNome(request.getParameter("email").toUpperCase());
             adminForm.setCognome(request.getParameter("password").toUpperCase());
             session.setAttribute("AdminForm", adminForm);
             nextPage = "/rispostaadmin.jsp";
- 
         }
         ServletContext application = getServletContext();
         RequestDispatcher rd;
         rd = application.getRequestDispatcher(nextPage);
         rd.forward(request, response);
         return;
- 
     }
- 
 
- 
- 
 }
