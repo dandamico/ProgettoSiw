@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>ADMIN</title>
+<title>Prodotto</title>
 </head>
 <body>
-Nome: ${admin.nome}
-Cognome: ${admin.cognome}
+Nome: ${prodotto.nome}
+Prezzo: ${prodotto.prezzo}
+Descrizione: ${prodotto.descrizione}
 </body>
 </html>
