@@ -7,10 +7,10 @@
 <meta charset="UTF-8">
 <title>Utente</title>
 <body>
-	Nome: ${studente.nome} 
-	Cognome: ${studente.cognome}
-	Data di nascita: ${studente.nascita}
-	Email: ${studente.email}
+	Nome: ${utente.nome} 
+	Cognome: ${utente.cognome}
+	Data di nascita: ${utente.nascita}
+	Email: ${utente.email}
 </body>
 </head>
 </html>
