@@ -7,8 +7,8 @@
 		<p>
 		Cognome: ${AdminForm.cognome}
 	</p>
-	<p>Sei sicuro di voler procedere con questi dati?</p>
+	<p>Vuoi inserire un nuovo prodotto?</p>
 	<p>
-		<a href="confermaadmin"> Conferma Definitiva </a>
+	      <a href="newProdotto.jsp">Nuovo Prodotto </a>
 	</p>
 </html>
