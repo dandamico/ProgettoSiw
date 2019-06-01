@@ -6,13 +6,11 @@
 <!-- Colleghiamo la nostra form alla nostra pagina di stile -->
 <title>Inserimento dati</title>
 </head>
-<header>
 	<nav>
 		<ul>
 			<li><a href="index.html">Home</a></li>
 		</ul>
 	</nav>
-</header>
 <body bgcolor="#293133"> 
 <div class="center">
 <section class="form">

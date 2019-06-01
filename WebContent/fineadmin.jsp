@@ -13,6 +13,5 @@
 	Nome: ${adminForm.nome} 
 	Cognome: ${adminForm.cognome}
 	</p>
-
 </body>
 </html>
