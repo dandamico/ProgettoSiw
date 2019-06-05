@@ -8,6 +8,7 @@
 <title></title>
 </head>
 <body>
+<div class="center">
 	<p>Nome: ${prodottoForm.nome}</p>
 	<p>Descrizione: ${prodottoForm.descrizione}</p>
 	<p>Prezzo: ${prodottoForm.prezzo}</p>
@@ -15,5 +16,6 @@
 	<p>
 		<a href="confermaProdotto"> Conferma Definitiva </a>
 	</p>
+	</div>
 </body>
 </html>
