@@ -8,7 +8,7 @@
 </head>
 <body>
 Nome: ${prodotto.nome}
-Prezzo: ${prodotto.prezzo}
 Descrizione: ${prodotto.descrizione}
+Prezzo: ${prodotto.prezzo}
 </body>
 </html>

@@ -10,7 +10,7 @@ charset=UTF-8"%>
 <body>
 	<div class="center">
 		<p>
-		<h4>I tuoi dati salvati sono:</h4>
+		<h4> <b style="color: #daa800 ;">I tuoi dati sono:</b></h4>
 		<p>Nome: ${utenteForm.nome}</p>
 		<p>Cognome: ${utenteForm.cognome}</p>
 		<p>Data di nascita: ${utenteForm.nascita}</p>

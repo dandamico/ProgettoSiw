@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <body>
+	<h3>Benvenuto!</h3>
+	<p>Nome: ${AdminForm.nome}</p>
+	<p>Cognome: ${AdminForm.cognome}</p>
+	<br>
 	<p>
-		Nome: ${AdminForm.nome}
-		</p>
-		<p>
-		Cognome: ${AdminForm.cognome}
+		<a href="newProdotto.jsp">Nuovo Prodotto </a>
 	</p>
-	<p>Sei sicuro di voler procedere con questi dati?</p>
 	<p>
-		<a href="confermaadmin"> Conferma Definitiva </a>
+		<a href="prodotti.jsp">Lista prodotti inseriti</a>
 	</p>
 </html>

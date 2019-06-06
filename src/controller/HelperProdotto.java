@@ -18,22 +18,16 @@ public class HelperProdotto {
 			request.setAttribute("nomeErr", mess );  //Passo alla form il messaggio di errore
 			errore = true;
 		}
-
-
 		if(descrizione.isEmpty()) {
 			String  mess = "*campo obbligatorio";
 			request.setAttribute("descErr", mess );  //Passo alla form il messaggio di errore
 			errore = true;
 		}
-		
 		if(prezzo.isEmpty()) {
 			String  mess = "*campo obbligatorio";
 			request.setAttribute("prezzoErr", mess );  //Passo alla form il messaggio di errore
 			errore = true;
 		}
-		
-		
 		return errore;
-
 	}
 }

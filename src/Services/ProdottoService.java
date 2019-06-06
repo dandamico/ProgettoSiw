@@ -12,24 +12,28 @@ public class ProdottoService {
 	public ProdottoService() {
 
 		this.prodotti = new ArrayList<>();
+		
 		Prodotto p1 = new Prodotto();
 		p1.setId(1l);
 		p1.setNome("Daniele");
 		p1.setDescrizione("Software");
+		p1.setPrezzo("21");
 		prodotti.add(p1);
 
-		this.prodotti = new ArrayList<>();
+	
 		Prodotto p2 = new Prodotto();
 		p2.setId(2l);
 		p2.setNome("Federico");
 		p2.setDescrizione("Fitness");
+		p2.setPrezzo("21");
 		prodotti.add(p2);
 		
-		this.prodotti = new ArrayList<>();
+
 		Prodotto p3 = new Prodotto();
 		p3.setId(3l);
 		p3.setNome("Riccardo");
 		p3.setDescrizione("Proteina");
+		p3.setPrezzo("21");
 		prodotti.add(p3);
 
 	}
@@ -39,7 +43,6 @@ public class ProdottoService {
 	}
 
 	public List<Prodotto> listaProdotti(){
-
 		return this.prodotti;
 	}
 
@@ -51,7 +54,4 @@ public class ProdottoService {
 		}
 		return prodotto;
 	}
-
 }
-
-

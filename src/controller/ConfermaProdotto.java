@@ -10,18 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import Services.ProdottoService;
 import model.Prodotto;
 
 @WebServlet("/confermaProdotto")
 public class ConfermaProdotto extends HttpServlet{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();			//crea sessione
+		
 		Prodotto prodotto = new Prodotto();					//crea prodotto
 		ProdottoForm prodottoForm = (ProdottoForm) session.getAttribute("prodottoForm");		//form del prodotto=la form della sessione corrente
 		//inizializzo i dati
@@ -29,10 +31,8 @@ public class ConfermaProdotto extends HttpServlet{
 		prodotto.setDescrizione(prodottoForm.getDescrizione());
 		prodotto.setPrezzo(prodottoForm.getPrezzo());
 		
-		/*
 		ProdottoService prodottoService = new ProdottoService();			//richiamo i servizi di prodotto
 		prodottoService.salvaProdotto(prodotto);							//salvo il nuovo prodotto
-		*/
 		
 		
 		//Gestione della risposta

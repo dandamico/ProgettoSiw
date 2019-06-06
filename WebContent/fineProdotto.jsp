@@ -14,7 +14,9 @@
 		<p>Nome: ${prodottoForm.nome}</p>
 		<p>Descrizione: ${prodottoForm.descrizione}</p>
 		<p>Prezzo: ${prodottoForm.prezzo}</p>
-		<ul><li><a href="index.html">Ritorna alla Home</a></li></ul>
+		<ul>
+			<li><a href="index.html">Ritorna alla Home</a></li>
+		</ul>
 	</div>
 </body>
 </html>
