@@ -20,6 +20,10 @@ public class Utente {
 
 	@Column(name = "username", unique=true)
 	protected String username;
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/MrCrick
 
 	@Column(name = "password")
 	protected String password;
@@ -27,8 +31,25 @@ public class Utente {
 	@Column(name = "ruolo")
 	protected String ruolo;
 
+<<<<<<< HEAD
+	@Column(name = "role")
+	protected String role;
+
+	/**
+	 * Constructor
+	 *
+	 * @param id The id of this User
+	 * @param firstName The first name of this User
+	 * @param lastName The last name of this User
+	 * @param username The username of this User for authentication
+	 * @param password The password of this User for authentication
+	 * @param role The authorization role for this User
+	 */
+	public Utente(Long id, String nome, String cognome, String username, String password, String role) {
+=======
 
 	public Utente(Long id, String nome, String cognome, String username, String password, String ruolo) {
+>>>>>>> origin/MrCrick
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
