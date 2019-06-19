@@ -1,6 +1,12 @@
 package it.uniroma3.ProgettoSiw;
 
+<<<<<<< HEAD
 
+=======
+import it.uniroma3.ProgettoSiw.model.Admin;
+import it.uniroma3.ProgettoSiw.model.Utente;
+import it.uniroma3.ProgettoSiw.storage.AdminRepository;
+>>>>>>> origin/Zio
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -36,9 +42,18 @@ public class DBPopulation implements ApplicationRunner {
 		System.out.println("Storing users...");
 
 
+<<<<<<< HEAD
         Admin admin = new Admin(1L, "Mario", "Rossi", "mariorossi", null, "ADMIN");
         String adminPassword = new BCryptPasswordEncoder().encode("mrpass");
         admin.setPassword(adminPassword);
         admin = this.adminRepository.save(admin);
+=======
+		Admin admin = new Admin(1L, "FEDERICO", "CICERO", "BUSINESS", "ADMIN");
+		String adminPassword = new BCryptPasswordEncoder().encode("mrpass");
+		admin.setPassword(adminPassword);
+		admin = this.adminRepository.save(admin);
+
+
+>>>>>>> origin/Zio
 	}
 }
