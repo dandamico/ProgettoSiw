@@ -31,19 +31,70 @@ public class MainController {
 	}
 
 	/**
+	 * This method is called when a GET request is sent by the user to URL "/fornitori".
+	 * This method prepares and dispatches the welcome view.
+	 *
+	 * @return the name of the fornitori view
+	 */
+	@RequestMapping(value = { "/fornitore" }, method = RequestMethod.GET)
+	public String fornitori(Model model) {
+		return "fornitore";
+	}
+
+
+	/**
+	 * This method is called when a GET request is sent by the user to URL "/categoria".
+	 * This method prepares and dispatches the home view.
+	 *
+	 * @return the name of the categoria view
+	 */
+	@RequestMapping(value = { "/categoria" }, method = RequestMethod.GET)
+	public String categoria(Model model) {
+		return "categoria";
+	}
+
+	/**
+	 * This method is called when a GET request is sent by the user to URL "/prodotto".
+	 * This method prepares and dispatches the home view.
+	 *
+	 * @return the name of the prodotto view
+	 */
+	@RequestMapping(value = { "/prodotto" }, method = RequestMethod.GET)
+	public String prodotto(Model model) {
+		return "prodotto";
+	}
+
+
+	/**
 	 * This method is called when a GET request is sent by the user to URL "/welcome".
 	 * This method prepares and dispatches the welcome view.
 	 *
 	 * @return the name of the welcome view
 	 */
-	@RequestMapping(value = { "/welcome" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/paginaAdmin" }, method = RequestMethod.GET)
 	public String welcome(Model model) {
 		UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String role = details.getAuthorities().iterator().next().getAuthority();     // get first authority
-		model.addAttribute("email", details.getUsername());
+		model.addAttribute("username", details.getUsername());
 		model.addAttribute("role", role);
 
-		return "welcome";
+		return "paginaAdmin";
+	}
+
+	/**
+	 * This method is called when a GET request is sent by the user to URL "/pagina".
+	 * This method prepares and dispatches the welcome view.
+	 *
+	 * @return the name of the welcome view
+	 */
+	@RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
+	public String Pagina(Model model) {
+		UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String role = details.getAuthorities().iterator().next().getAuthority();     // get first authority
+		model.addAttribute("username", details.getUsername());
+		model.addAttribute("role", role);
+
+		return "admin";
 	}
 
 	/**
@@ -52,13 +103,13 @@ public class MainController {
 	 *
 	 * @return the name of the admin view
 	 */
-	@RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/inserimentoProdotto" }, method = RequestMethod.GET)
 	public String admin(Model model) {
 		UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String role = details.getAuthorities().iterator().next().getAuthority();    // get first authority
-		model.addAttribute("email", details.getUsername());
+		model.addAttribute("username", details.getUsername());
 		model.addAttribute("role", role);
 
-		return "admin";
+		return "inserimentoProdotto";
 	}
 }

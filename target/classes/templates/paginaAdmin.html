@@ -3,15 +3,15 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Home</title>
+<title>Accesso Admin</title>
 </head>
 <body>
 	<h1>
-		Welcome, <span th:utext="${username}"></span>!
+		Ben tornato, <span th:utext="${username}"></span>!
 	</h1>
 
 	<h3 th:if="${role} == 'ADMIN'">
-		<a href="/admin">Visit the admin page</a>
+		<a href="/inserimentoProdotto">Inserisci prodotto</a>
 	</h3>
 
 	<h5>
