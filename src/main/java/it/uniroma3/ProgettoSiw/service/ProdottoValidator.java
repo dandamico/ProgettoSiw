@@ -5,13 +5,15 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import it.uniroma3.ProgettoSiw.model.Prodotto;
+
 
 @Component
 public class ProdottoValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> clazz) {
-		return Admin.class.equals(clazz);
+		return Prodotto.class.equals(clazz);
 	}
 
 	@Override
