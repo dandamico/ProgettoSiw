@@ -29,6 +29,11 @@ public class MainController {
 	public String index(Model model) {
 		return "home";
 	}
+	
+	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
+	public String index1(Model model) {
+		return "home";
+	}
 
 	/**
 	 * This method is called when a GET request is sent by the user to URL "/fornitori".

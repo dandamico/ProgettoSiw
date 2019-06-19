@@ -45,9 +45,15 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 // authorization paragraph: we are going to define here WHO can access WHAT pages
                 .authorizeRequests()
 
+
                     // everyone (authenticated or not) can access the home page
+<<<<<<< HEAD
+                    .antMatchers(HttpMethod.GET, "/", "/index").permitAll()
+                    
+=======
                     .antMatchers(HttpMethod.GET,"/", "/index","/categoria","/fornitore","/prodotto").permitAll()
 
+>>>>>>> origin/MrCrick
                     // only admin can access the admin page
                     .antMatchers(HttpMethod.GET, "/inserimentoProdotto").hasAnyAuthority("ADMIN")
 
