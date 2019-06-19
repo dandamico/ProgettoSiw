@@ -11,18 +11,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import progettosilph.model.Fotografia;
-import progettosilph.service.FotografiaServices;
-import progettosilph.service.FotografiaValidator;
+
 
 @Controller
-public class FotografiaController {
+public class ProdottoController {
 
 	@Autowired
-	private FotografiaValidator fotografiaValidator;
+	private ProdottoValidator fotografiaValidator;
 
 	@Autowired
-	private FotografiaServices fotografiaService;
+	private ProdottoServices fotografiaService;
 
 	@RequestMapping(value = "/fotografia", method = RequestMethod.POST)
 	public String newFotografia(@Valid @ModelAttribute("Fotografia") Fotografia fotografia,
