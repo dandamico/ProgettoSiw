@@ -3,29 +3,31 @@ package it.uniroma3.ProgettoSiw.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import progettosilph.model.Funzionario;
-import progettosilph.repository.FunzionarioRepository;
+import it.uniroma3.ProgettoSiw.storage.AdminRepository;
+
+
 
 @Service
 public class AdminServices {
 
-	@Autowired //crea da solo l'oggetto e assegnalo alla variabile
-	private FunzionarioRepository funzRepository;
+	@Autowired 
+	private AdminRepository adminRepository;
 	
 	@Transactional
-	public Funzionario inserisci(Funzionario funz) {
-		return funzRepository.save(funz);
+	public Admin inserisci(Admin admin) {
+		return adminRepository.save(admin);
 	}
 
 	@Transactional
-	public List<Funzionario> tutti() {
-		return (List<Funzionario>) funzRepository.findAll();
+	public List<Admin> elencoAdmin() {
+		return (List<Admin>) adminRepository.findAll();
 	}
 
-	public Funzionario funzionarioPerId(Long id) {
-		return this.funzRepository.findById(id).get();
+	public Admin adminPerId(Long id) {
+		return this.adminRepository.findById(id).get();
 	}
 }

@@ -3,8 +3,8 @@ package it.uniroma3.ProgettoSiw.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class Utente {
+@Table(name = "admins")
+public class Admin {
 
 
 	@Id
@@ -20,10 +20,6 @@ public class Utente {
 
 	@Column(name = "username", unique=true)
 	protected String username;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/MrCrick
 
 	@Column(name = "password")
 	protected String password;
@@ -31,25 +27,8 @@ public class Utente {
 	@Column(name = "ruolo")
 	protected String ruolo;
 
-<<<<<<< HEAD
-	@Column(name = "role")
-	protected String role;
 
-	/**
-	 * Constructor
-	 *
-	 * @param id The id of this User
-	 * @param firstName The first name of this User
-	 * @param lastName The last name of this User
-	 * @param username The username of this User for authentication
-	 * @param password The password of this User for authentication
-	 * @param role The authorization role for this User
-	 */
-	public Utente(Long id, String nome, String cognome, String username, String password, String role) {
-=======
-
-	public Utente(Long id, String nome, String cognome, String username, String password, String ruolo) {
->>>>>>> origin/MrCrick
+	public Admin(Long id, String nome, String cognome, String username, String password, String ruolo) {
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -58,54 +37,63 @@ public class Utente {
 		this.ruolo = ruolo;
 	}
 
-	public Utente() {
-	}
 
 	public Long getId() {
 		return id;
 	}
 
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getFirstName() {
+
+	public String getNome() {
 		return nome;
 	}
 
-	public void setFirstName(String firstName) {
-		this.nome = firstName;
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
+
 
 	public String getCognome() {
 		return cognome;
 	}
 
+
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
+
 
 	public String getUsername() {
 		return username;
 	}
 
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 
 	public String getPassword() {
 		return password;
 	}
 
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 
 	public String getRuolo() {
 		return ruolo;
 	}
 
-	public void setRole(String ruolo) {
+
+	public void setRuolo(String ruolo) {
 		this.ruolo = ruolo;
 	}
 }
