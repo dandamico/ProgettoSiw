@@ -18,7 +18,7 @@ import it.uniroma3.ProgettoSiw.service.FornitoreValidator;
 
 
 @Controller
-public class FotografoController {
+public class FornitoreController {
 
 	@Autowired
 	private FornitoreValidator fornitoreValidator;		//crea classe
