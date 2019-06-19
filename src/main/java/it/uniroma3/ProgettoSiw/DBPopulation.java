@@ -1,5 +1,6 @@
 package it.uniroma3.ProgettoSiw;
 
+import it.uniroma3.ProgettoSiw.model.Admin;
 import it.uniroma3.ProgettoSiw.model.Utente;
 import it.uniroma3.ProgettoSiw.storage.AdminRepository;
 
@@ -34,7 +35,7 @@ public class DBPopulation implements ApplicationRunner {
 
 
 
-        Utente admin = new Utente(1L, "Mario", "Rossi", "mariorossi", null, "ADMIN");
+        Admin admin = new Admin(1L, "Mario", "Rossi", "mariorossi",  "ADMIN");
         String adminPassword = new BCryptPasswordEncoder().encode("mrpass");
         admin.setPassword(adminPassword);
         admin = this.adminRepository.save(admin);
