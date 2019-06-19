@@ -29,6 +29,11 @@ public class MainController {
 	public String index(Model model) {
 		return "home";
 	}
+	
+	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
+	public String index1(Model model) {
+		return "home";
+	}
 
 	/**
 	 * This method is called when a GET request is sent by the user to URL "/welcome".
@@ -40,7 +45,7 @@ public class MainController {
 	public String welcome(Model model) {
 		UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String role = details.getAuthorities().iterator().next().getAuthority();     // get first authority
-		model.addAttribute("email", details.getUsername());
+		model.addAttribute("username", details.getUsername());
 		model.addAttribute("role", role);
 
 		return "welcome";
@@ -56,7 +61,7 @@ public class MainController {
 	public String admin(Model model) {
 		UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String role = details.getAuthorities().iterator().next().getAuthority();    // get first authority
-		model.addAttribute("email", details.getUsername());
+		model.addAttribute("username", details.getUsername());
 		model.addAttribute("role", role);
 
 		return "admin";

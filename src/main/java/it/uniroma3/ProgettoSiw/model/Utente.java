@@ -24,8 +24,8 @@ public class Utente {
 	@Column(name = "cognome")
 	protected String cognome;
 
-	@Column(name = "email", unique=true)
-	protected String email;
+	@Column(name = "username", unique=true)
+	protected String username;
 
 
 	@Column(name = "password")
@@ -45,11 +45,11 @@ public class Utente {
 	 * @param password The password of this User for authentication
 	 * @param role The authorization role for this User
 	 */
-	public Utente(Long id, String nome, String cognome, String email, String password, String role) {
+	public Utente(Long id, String nome, String cognome, String username, String password, String role) {
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
-		this.email = email;
+		this.username = username;
 		this.password = password;
 		this.role = role;
 	}
@@ -89,12 +89,12 @@ public class Utente {
 
 
 	public String getUsername() {
-		return email;
+		return username;
 	}
 
 
 	public void setUsername(String username) {
-		this.email = username;
+		this.username = username;
 	}
 
 

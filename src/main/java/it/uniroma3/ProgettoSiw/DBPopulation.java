@@ -32,7 +32,7 @@ public class DBPopulation implements ApplicationRunner {
 
         System.out.println("Utenti memorizzati:");
 
-        Utente admin = new Utente(1L, "Mario", "Rossi", "mariorossi@gmail.com", null, "ADMIN");
+        Utente admin = new Utente(1L, "Mario", "Rossi", "mariorossi", null, "ADMIN");
         String adminPassword = new BCryptPasswordEncoder().encode("mrpass");
         admin.setPassword(adminPassword);
         admin = this.utenteRepository.save(admin);
