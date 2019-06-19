@@ -40,17 +40,13 @@ public class Admin {
      * @param username The username of this admin for authentication
      * @param password The password of this admin for authentication
      */
-	public Admin(Long id, String nome, String cognome, String username, String password) {
+	public Admin(Long id, String nome, String cognome, String username, String password, String role) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.username = username;
         this.password = password;
-    }
-	 /**
-     * Empty Constructor
-     */
-     public Admin() {
+        this.role = role;
     }
 	
 	public long getId() {
@@ -89,7 +85,4 @@ public class Admin {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
-	
 }

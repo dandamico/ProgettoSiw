@@ -22,84 +22,77 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 
-    /**
-     * A reference to the environment of properties defined through the application.properties file.
-     * It is automatically wired before at launch.
-     */
-    @Autowired
-    private Environment environment;
+	/**
+	 * A reference to the environment of properties defined through the application.properties file.
+	 * It is automatically wired before at launch.
+	 */
+	@Autowired
+	private Environment environment;
 
-    /**
-     * The datasource where to find users in our application.
-     * It is a bean (meaning that it is only initialized once)
-     */
-    private DataSource dataSource;
+	/**
+	 * The datasource where to find users in our application.
+	 * It is a bean (meaning that it is only initialized once)
+	 */
+	private DataSource dataSource;
 
-    /**
-     * The configure method is the main method in the AuthConfiguration.
-     * it
-     */
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                // authorization paragraph: we are going to define here WHO can access WHAT pages
-                .authorizeRequests()
+	/**
+	 * The configure method is the main method in the AuthConfiguration.
+	 * it
+	 */
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http
+		// authorization paragraph: we are going to define here WHO can access WHAT pages
+		.authorizeRequests()
 
+		// everyone (authenticated or not) can access the home page
+		.antMatchers(HttpMethod.GET,"/", "/index","/categoria","/fornitore","/prodotto").permitAll()
 
-<<<<<<< HEAD
-                    .antMatchers(HttpMethod.GET,"/", "/index","/categoria","/fornitore","/prodotto").permitAll()
+		// only admin can access the admin page
+		.antMatchers(HttpMethod.GET, "/inserimentoProdotto").hasAnyAuthority("ADMIN")
 
-=======
-                    // everyone (authenticated or not) can access the home page
-                    .antMatchers(HttpMethod.GET,"/", "/index","/categoria","/fornitore","/prodotto").permitAll()
+		// all authenticated users can access all the other pages (that is, welcome)
+		.anyRequest().authenticated()
 
+		// login paragraph: we are going to define here how to login
+		// use formlogin protocol to perform login
+		.and().formLogin()
+		// after login is successful, redirect to /welcome page
+		.defaultSuccessUrl("/paginaAdmin")
+		//NOTE: we are using the default configuration for login,
+		// meaning that the /login url is automatically mapped to auto-generated page.
+		// for our own page, we would need to use loginPage()
+		// and write a method for accessing it with GET method (but Spring would still handle the POST automatically)
 
->>>>>>> origin/Zio
-                    // only admin can access the admin page
-                    .antMatchers(HttpMethod.GET, "/inserimentoProdotto").hasAnyAuthority("ADMIN")
+		// logout paragraph: we are going to define here how to logout
+		.and().logout()
+		// logout is performed when sending a GET to "/logout"
+		.logoutUrl("/logout")
+		// after logout is successful, redirect to / page (home)
+		.logoutSuccessUrl("/index");
+	}
 
-                    // all authenticated users can access all the other pages (that is, welcome)
-                    .anyRequest().authenticated()
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		auth.jdbcAuthentication().dataSource(this.buildDatasource())
+		.authoritiesByUsernameQuery("SELECT username, ruolo FROM users WHERE username=?")
+		.usersByUsernameQuery("SELECT username, password, 1 as enabled FROM users WHERE username=?");
+	}
 
-                // login paragraph: we are going to define here how to login
-                // use formlogin protocol to perform login
-                .and().formLogin()
-                    // after login is successful, redirect to /welcome page
-                    .defaultSuccessUrl("/paginaAdmin")
-                //NOTE: we are using the default configuration for login,
-                // meaning that the /login url is automatically mapped to auto-generated page.
-                // for our own page, we would need to use loginPage()
-                // and write a method for accessing it with GET method (but Spring would still handle the POST automatically)
+	@Bean
+	DataSource buildDatasource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName(environment.getProperty("spring.datasource.driver-class-name"));
+		dataSource.setUrl(environment.getProperty("spring.datasource.url"));
+		dataSource.setUsername(environment.getProperty("spring.datasource.username"));
+		dataSource.setPassword(environment.getProperty("spring.datasource.password"));
+		return dataSource;
+	}
 
-                // logout paragraph: we are going to define here how to logout
-                .and().logout()
-                    // logout is performed when sending a GET to "/logout"
-                    .logoutUrl("/logout")
-                    // after logout is successful, redirect to / page (home)
-                    .logoutSuccessUrl("/index");
-    }
-
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(this.buildDatasource())
-                .authoritiesByUsernameQuery("SELECT username, ruolo FROM users WHERE username=?")
-                .usersByUsernameQuery("SELECT username, password, 1 as enabled FROM users WHERE username=?");
-    }
-
-    @Bean
-    DataSource buildDatasource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(environment.getProperty("spring.datasource.driver-class-name"));
-        dataSource.setUrl(environment.getProperty("spring.datasource.url"));
-        dataSource.setUsername(environment.getProperty("spring.datasource.username"));
-        dataSource.setPassword(environment.getProperty("spring.datasource.password"));
-        return dataSource;
-    }
-
-    @Bean
-    PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean
+	PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
 	public DataSource getDataSource() {
 		return dataSource;
