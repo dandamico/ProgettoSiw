@@ -5,14 +5,15 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import progettosilph.model.Funzionario;
+import it.uniroma3.ProgettoSiw.model.Admin;
+
 
 @Component
 public class AdminValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> clazz) {
-		return Funzionario.class.equals(clazz);
+		return Admin.class.equals(clazz);
 	}
 
 	@Override

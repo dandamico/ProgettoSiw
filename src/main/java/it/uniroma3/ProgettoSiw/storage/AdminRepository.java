@@ -2,6 +2,7 @@ package it.uniroma3.ProgettoSiw.storage;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import it.uniroma3.ProgettoSiw.model.Admin;
 import it.uniroma3.ProgettoSiw.model.Utente;
 
 /**
@@ -9,4 +10,4 @@ import it.uniroma3.ProgettoSiw.model.Utente;
  *
  * @see Utente
  */
-public interface UtenteRepository extends JpaRepository<Utente, Long> {}
+public interface AdminRepository extends JpaRepository<Admin, Long> {}
