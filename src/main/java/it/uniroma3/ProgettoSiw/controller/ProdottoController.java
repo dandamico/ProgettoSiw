@@ -51,7 +51,7 @@ public class ProdottoController {
 	}
 	
 	@RequestMapping("/addProdotto")
-	public String addFotografia(Model model) {
+	public String addProdotto(Model model) {
 		model.addAttribute("prodotto", new Prodotto());
 		return "inserisciProdotto.html";
 	}
