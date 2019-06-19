@@ -20,20 +20,12 @@ public class Utente {
 
 	@Column(name = "username", unique=true)
 	protected String username;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/MrCrick
 
 	@Column(name = "password")
 	protected String password;
 
 	@Column(name = "ruolo")
 	protected String ruolo;
-
-<<<<<<< HEAD
-	@Column(name = "role")
-	protected String role;
 
 	/**
 	 * Constructor
