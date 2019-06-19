@@ -11,48 +11,50 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import progettosilph.model.Fotografo;
-import progettosilph.service.FotografoServices;
-import progettosilph.service.FotografoValidator;
+import it.uniroma3.ProgettoSiw.model.Fornitore;
+import it.uniroma3.ProgettoSiw.service.FornitoreServices;
+import it.uniroma3.ProgettoSiw.service.FornitoreValidator;
+
+
 
 @Controller
 public class FotografoController {
 
 	@Autowired
-	private FotografoValidator fotografoValidator;
+	private FornitoreValidator fornitoreValidator;		//crea classe
 
 	@Autowired
-	private FotografoServices fotografoService;
+	private FornitoreServices fornitoreService;			//crea classe
 
-	@RequestMapping(value = "/fotografo", method = RequestMethod.POST)
-	public String newFotografo(@Valid @ModelAttribute("Fotografo") Fotografo fotografo,
+	@RequestMapping(value = "/fornitore", method = RequestMethod.POST)			//crea html
+	public String newFornitore(@Valid @ModelAttribute("Fornitore") Fornitore fornitore,
 			Model model, BindingResult bindingResult) {
-		this.fotografoValidator.validate(fotografo, bindingResult);
+		this.fornitoreValidator.validate(fornitore, bindingResult);
 
 		if(!bindingResult.hasErrors()) {
-			this.fotografoService.inserisci(fotografo);
-			model.addAttribute("fotografi", this.fotografoService.tutti());
-			return "fotografi.html";
+			this.fornitoreService.inserisci(fornitore);
+			model.addAttribute("fornitori", this.fornitoreService.tutti());		//crea html
+			return "fornitori.html";
 		} else {
-			return "inserisciFotografo.html";
+			return "inserisciFornitore.html";
 		}
 	}
 
 	//il valore che ci aspettiamo nel parametro id è quello specifico contenuto in value
-	@RequestMapping(value = "/fotografo/{id}", method = RequestMethod.GET)
-	public String getFotografo(@PathVariable ("id") Long id, Model model) {
+	@RequestMapping(value = "/fornitore/{id}", method = RequestMethod.GET)
+	public String getFornitore(@PathVariable ("id") Long id, Model model) {
 		if(id != null) {
-			model.addAttribute("fotografo", this.fotografoService.fotografoPerId(id));
-			return "fotografo.html"; 
+			model.addAttribute("fornitore", this.fornitoreService.fornitorePerId(id));
+			return "fornitore.html"; 
 		} else {
-			model.addAttribute("fotografi", this.fotografoService.tutti());
-			return "fotografi.html"; 
+			model.addAttribute("fornitori", this.fornitoreService.tutti());
+			return "fornitori.html"; 
 		}
 	}
 	
-	@RequestMapping("/addFotografo")
-	public String addFotografo(Model model) {
-		model.addAttribute("fotografo", new Fotografo());
-		return "inserisciFotografo.html";
+	@RequestMapping("/addFornitore")
+	public String addFornitore(Model model) {
+		model.addAttribute("fornitore", new Fornitore());
+		return "inserisciFornitore.html";
 	}
 }

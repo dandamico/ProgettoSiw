@@ -45,11 +45,8 @@ public class Utente {
 	 * @param password The password of this User for authentication
 	 * @param role The authorization role for this User
 	 */
-	public Utente(Long id, String nome, String cognome, String username, String password, String role) {
-=======
-
 	public Utente(Long id, String nome, String cognome, String username, String password, String ruolo) {
->>>>>>> origin/MrCrick
+
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;

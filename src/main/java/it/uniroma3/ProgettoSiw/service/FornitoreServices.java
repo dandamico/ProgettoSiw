@@ -6,26 +6,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import progettosilph.model.Fotografo;
-import progettosilph.repository.FotografoRepository;
+import it.uniroma3.ProgettoSiw.model.Fornitore;
+import it.uniroma3.ProgettoSiw.storage.FornitoreRepository;
 
 @Service
 public class FornitoreServices {
 
 	@Autowired //crea da solo l'oggetto e assegnalo alla variabile
-	private FotografoRepository fotografoRepository;
+	private FornitoreRepository fornitoreRepository;
 	
 	@Transactional
-	public Fotografo inserisci(Fotografo fotografo) {
-		return fotografoRepository.save(fotografo);
+	public Fornitore inserisci(Fornitore fornitore) {
+		return fornitoreRepository.save(fornitore);
 	}
 
 	@Transactional
-	public List<Fotografo> tutti() {
-		return (List<Fotografo>) fotografoRepository.findAll();
+	public List<Fornitore> tutti() {
+		return (List<Fornitore>) fornitoreRepository.findAll();
 	}
 
-	public Fotografo fotografoPerId(Long id) {
-		return this.fotografoRepository.findById(id).get();
+	public Fornitore fornitorePerId(Long id) {
+		return this.fornitoreRepository.findById(id).get();
 	}
 }
