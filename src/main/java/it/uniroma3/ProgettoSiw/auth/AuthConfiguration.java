@@ -47,10 +47,15 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 
 
                     // everyone (authenticated or not) can access the home page
+<<<<<<< HEAD
                     .antMatchers(HttpMethod.GET, "/", "/index").permitAll()
                     
+=======
+                    .antMatchers(HttpMethod.GET,"/", "/index","/categoria","/fornitore","/prodotto").permitAll()
+
+>>>>>>> origin/MrCrick
                     // only admin can access the admin page
-                    .antMatchers(HttpMethod.GET, "/admin").hasAnyAuthority("ADMIN")
+                    .antMatchers(HttpMethod.GET, "/inserimentoProdotto").hasAnyAuthority("ADMIN")
 
                     // all authenticated users can access all the other pages (that is, welcome)
                     .anyRequest().authenticated()
@@ -59,7 +64,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 // use formlogin protocol to perform login
                 .and().formLogin()
                     // after login is successful, redirect to /welcome page
-                    .defaultSuccessUrl("/welcome")
+                    .defaultSuccessUrl("/paginaAdmin")
                 //NOTE: we are using the default configuration for login,
                 // meaning that the /login url is automatically mapped to auto-generated page.
                 // for our own page, we would need to use loginPage()
@@ -70,13 +75,13 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                     // logout is performed when sending a GET to "/logout"
                     .logoutUrl("/logout")
                     // after logout is successful, redirect to / page (home)
-                    .logoutSuccessUrl("/");
+                    .logoutSuccessUrl("/index");
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(this.buildDatasource())
-                .authoritiesByUsernameQuery("SELECT username, role FROM users WHERE username=?")
+                .authoritiesByUsernameQuery("SELECT username, ruolo FROM users WHERE username=?")
                 .usersByUsernameQuery("SELECT username, password, 1 as enabled FROM users WHERE username=?");
     }
 

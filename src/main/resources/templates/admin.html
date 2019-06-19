@@ -6,11 +6,13 @@
 <title>Home</title>
 </head>
 <body>
-	<h1>
-		Greetings, my Admin <span th:utext="${username}"></span>!
-	</h1>
+	<h3 th:if="${role} == 'ADMIN'">
+		<a href="/admin">Inserisci Prodotto</a>
+	</h3>
+
 	<h5>
 		<a href="/logout">Logout</a>
 	</h5>
+
 </body>
 </html>

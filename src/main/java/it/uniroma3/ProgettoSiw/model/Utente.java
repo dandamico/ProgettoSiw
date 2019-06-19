@@ -2,36 +2,36 @@ package it.uniroma3.ProgettoSiw.model;
 
 import javax.persistence.*;
 
-/**
- * A User is a generic person who can use our application.
- * Subclasses of User include Admin and Customer.
- * @see User
- */
 @Entity
-@Table(name = "utenti")
+@Table(name = "users")
 public class Utente {
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "id", columnDefinition = "serial", nullable = false)
 	protected Long id;
-
-
-	@Column(name = "nome")
+	
+	@Column(name = "name")
 	protected String nome;
-
 
 	@Column(name = "cognome")
 	protected String cognome;
 
 	@Column(name = "username", unique=true)
 	protected String username;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/MrCrick
 
 	@Column(name = "password")
 	protected String password;
 
+	@Column(name = "ruolo")
+	protected String ruolo;
 
+<<<<<<< HEAD
 	@Column(name = "role")
 	protected String role;
 
@@ -46,75 +46,66 @@ public class Utente {
 	 * @param role The authorization role for this User
 	 */
 	public Utente(Long id, String nome, String cognome, String username, String password, String role) {
+=======
+
+	public Utente(Long id, String nome, String cognome, String username, String password, String ruolo) {
+>>>>>>> origin/MrCrick
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.username = username;
 		this.password = password;
-		this.role = role;
+		this.ruolo = ruolo;
 	}
-
 
 	public Utente() {
 	}
-
 
 	public Long getId() {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	public String getFirstName() {
 		return nome;
 	}
 
-
 	public void setFirstName(String firstName) {
 		this.nome = firstName;
 	}
 
-	public String getLastName() {
+	public String getCognome() {
 		return cognome;
 	}
 
-
-	public void setLastName(String lastName) {
-		this.cognome = lastName;
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
 	}
-
 
 	public String getUsername() {
 		return username;
 	}
 
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
 
 	public String getPassword() {
 		return password;
 	}
 
-
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-
-	public String getRole() {
-		return role;
+	public String getRuolo() {
+		return ruolo;
 	}
 
-
-	public void setRole(String role) {
-		this.role = role;
+	public void setRole(String ruolo) {
+		this.ruolo = ruolo;
 	}
 }
