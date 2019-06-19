@@ -34,12 +34,10 @@ public class DBPopulation implements ApplicationRunner {
 		System.out.println("Storing users...");
 
 
-
-        Admin admin = new Admin(1L, "Mario", "Rossi", "mariorossi",  "ADMIN");
-        String adminPassword = new BCryptPasswordEncoder().encode("mrpass");
-        admin.setPassword(adminPassword);
-        admin = this.adminRepository.save(admin);
-
+		Admin admin = new Admin(1L, "FEDERICO", "CICERO", "BUSINESS", "ADMIN");
+		String adminPassword = new BCryptPasswordEncoder().encode("mrpass");
+		admin.setPassword(adminPassword);
+		admin = this.adminRepository.save(admin);
 
 	}
 }
