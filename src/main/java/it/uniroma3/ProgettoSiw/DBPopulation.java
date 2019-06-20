@@ -1,15 +1,15 @@
 package it.uniroma3.ProgettoSiw;
 
-import it.uniroma3.ProgettoSiw.model.Admin;
-import it.uniroma3.ProgettoSiw.model.Utente;
-import it.uniroma3.ProgettoSiw.storage.AdminRepository;
+import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
-import java.io.IOException;
+
+import it.uniroma3.ProgettoSiw.model.Admin;
+import it.uniroma3.ProgettoSiw.storage.AdminRepository;
 
 @Component
 public class DBPopulation implements ApplicationRunner {

@@ -31,7 +31,7 @@ public class AdminController {
 
 		if(!bindingResult.hasErrors()) {
 			this.adminService.inserisci(admin);
-			model.addAttribute("funzionario", this.adminService.adminPerId(admin.getId()));
+			model.addAttribute("admin", this.adminService.adminPerId(admin.getId()));
 			return this.getAdmin(admin.getId(), model);
 		} else {
 			return "signupAdmin.html";
