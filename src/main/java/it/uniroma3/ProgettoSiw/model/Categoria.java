@@ -21,7 +21,10 @@ public class Categoria {
 	public Categoria(String nome) {
 		this.nome=nome;
 	}
-	
+	public Categoria() {
+
+	}
+		
 	
 	@OneToMany
 	private Map<Long, Prodotto> prodotti;
