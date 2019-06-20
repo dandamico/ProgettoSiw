@@ -11,6 +11,10 @@ import it.uniroma3.ProgettoSiw.service.CategoriaServices;
 import it.uniroma3.ProgettoSiw.service.FornitoreServices;
 import it.uniroma3.ProgettoSiw.service.ProdottoServices;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Daniele
 
 @Controller
 public class MainController {

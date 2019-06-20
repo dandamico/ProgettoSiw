@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.ProgettoSiw.model.Categoria;
+<<<<<<< HEAD
 import it.uniroma3.ProgettoSiw.repository.CategoriaRepository;
+=======
+import it.uniroma3.ProgettoSiw.storage.CategoriaRepository;
+>>>>>>> origin/Daniele
 
 
 @Service
@@ -30,3 +34,7 @@ public class CategoriaServices {
 		return this.categoriaRepository.findById(id).get();
 	}
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Daniele

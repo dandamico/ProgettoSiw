@@ -1,5 +1,9 @@
 package it.uniroma3.ProgettoSiw.model;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Daniele
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

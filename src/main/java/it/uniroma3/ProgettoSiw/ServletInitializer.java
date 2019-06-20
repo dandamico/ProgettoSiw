@@ -11,3 +11,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 	}
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Daniele
