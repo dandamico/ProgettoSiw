@@ -18,6 +18,10 @@ public class Categoria {
 	String nome;
 	
 	
+	public Categoria(String nome) {
+		this.nome=nome;
+	}
+	
 	
 	@OneToMany
 	private Map<Long, Prodotto> prodotti;

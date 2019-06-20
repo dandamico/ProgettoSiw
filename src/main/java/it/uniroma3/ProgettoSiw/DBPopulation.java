@@ -9,9 +9,11 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import it.uniroma3.ProgettoSiw.model.Admin;
+import it.uniroma3.ProgettoSiw.model.Categoria;
 import it.uniroma3.ProgettoSiw.model.Fornitore;
 import it.uniroma3.ProgettoSiw.model.Prodotto;
 import it.uniroma3.ProgettoSiw.storage.AdminRepository;
+import it.uniroma3.ProgettoSiw.storage.CategoriaRepository;
 import it.uniroma3.ProgettoSiw.storage.FornitoreRepository;
 import it.uniroma3.ProgettoSiw.storage.ProdottoRepository;
 
@@ -28,7 +30,8 @@ public class DBPopulation implements ApplicationRunner {
  private FornitoreRepository fornitoreRepository;
  @Autowired
  private AdminRepository adminRepository;
-
+ @Autowired
+ private CategoriaRepository categoriaRepository;
  
  
  @Override
@@ -67,6 +70,7 @@ public class DBPopulation implements ApplicationRunner {
         Fornitore f1 = new Fornitore("federico", "giuliana");
         f1 = this.fornitoreRepository.save(f1);
         
+       
 
         /*inserimento fotografie*/
         Prodotto p1 = new Prodotto("mela", "1", f1.getId());
@@ -78,7 +82,8 @@ public class DBPopulation implements ApplicationRunner {
         Prodotto p4 = new Prodotto("lime", "3", f1.getId());
         p4 = this.prodottoRepository.save(p4);
         
-
+        Categoria c1 = new Categoria("Frutta");
+        c1=this.categoriaRepository.save(c1);
         
 
         
