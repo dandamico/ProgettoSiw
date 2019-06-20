@@ -22,6 +22,5 @@ public class AdminValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cognome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "required");
-		
 	}
 }

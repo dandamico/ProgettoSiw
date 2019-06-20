@@ -46,10 +46,15 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
 
 
+<<<<<<< HEAD
+                    .antMatchers(HttpMethod.GET,"/", "/index","/categoria","/fornitore","/prodotto").permitAll()
+
+=======
                     // everyone (authenticated or not) can access the home page
                     .antMatchers(HttpMethod.GET,"/", "/index","/categoria","/fornitore","/prodotto").permitAll()
 
 
+>>>>>>> origin/Zio
                     // only admin can access the admin page
                     .antMatchers(HttpMethod.GET, "/inserimentoProdotto").hasAnyAuthority("ADMIN")
 
