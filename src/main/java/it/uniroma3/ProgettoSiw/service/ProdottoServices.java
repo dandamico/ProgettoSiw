@@ -1,5 +1,6 @@
 package it.uniroma3.ProgettoSiw.service;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import it.uniroma3.ProgettoSiw.model.Prodotto;
 import it.uniroma3.ProgettoSiw.storage.ProdottoRepository;
 
+
+
 @Service
 public class ProdottoServices {
 
@@ -16,8 +19,8 @@ public class ProdottoServices {
 	private ProdottoRepository prodottoRepository;
 	
 	@Transactional
-	public Prodotto inserisci(Prodotto prodotto) {
-		return prodottoRepository.save(prodotto);
+	public Prodotto inserisci(Prodotto foto) {
+		return prodottoRepository.save(foto);
 	}
 
 	@Transactional

@@ -15,24 +15,25 @@ import it.uniroma3.ProgettoSiw.model.Prodotto;
 import it.uniroma3.ProgettoSiw.service.ProdottoServices;
 import it.uniroma3.ProgettoSiw.service.ProdottoValidator;
 
+
 @Controller
 public class ProdottoController {
 
 	@Autowired
-	private  ProdottoValidator  prodottoValidator;
+	private ProdottoValidator prodottoValidator;
 
 	@Autowired
 	private ProdottoServices prodottoService;
 
 	@RequestMapping(value = "/prodotto", method = RequestMethod.POST)
-	public String newProdotto(@Valid @ModelAttribute("Prodotto") Prodotto prodotto,
+	public String newProdotto(@Valid @ModelAttribute("prodotto") Prodotto prodotto,
 			Model model, BindingResult bindingResult) {
 		this.prodottoValidator.validate(prodotto, bindingResult);
 
 		if(!bindingResult.hasErrors()) {
 			this.prodottoService.inserisci(prodotto);
-			model.addAttribute("categoria", this.prodottoService.tutti());
-			return "categoria.html";
+			model.addAttribute("prodotti", this.prodottoService.tutti());
+			return "prodotti.html";
 		} else {
 			return "inserisciProdotto.html";
 		}
@@ -40,13 +41,13 @@ public class ProdottoController {
 
 	//il valore che ci aspettiamo nel parametro id è quello specifico contenuto in value
 	@RequestMapping(value = "/prodotto/{id}", method = RequestMethod.GET)
-	public String getprodotto(@PathVariable ("id") Long id, Model model) {
+	public String getProdotto(@PathVariable ("id") Long id, Model model) {
 		if(id != null) {
 			model.addAttribute("prodotto", this.prodottoService.prodottoPerId(id));
 			return "prodotto.html"; 
 		} else {
-			model.addAttribute("fornitori", this.prodottoService.tutti());
-			return "categoria.html"; 
+			model.addAttribute("prodotti", this.prodottoService.tutti());
+			return "prodotti.html"; 
 		}
 	}
 	

@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import it.uniroma3.ProgettoSiw.model.Fornitore;
 import it.uniroma3.ProgettoSiw.storage.FornitoreRepository;
 
+
+
 @Service
 public class FornitoreServices {
 

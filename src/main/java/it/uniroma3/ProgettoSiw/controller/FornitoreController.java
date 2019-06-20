@@ -16,24 +16,23 @@ import it.uniroma3.ProgettoSiw.service.FornitoreServices;
 import it.uniroma3.ProgettoSiw.service.FornitoreValidator;
 
 
-
 @Controller
 public class FornitoreController {
 
 	@Autowired
-	private FornitoreValidator fornitoreValidator;		//crea classe
+	private FornitoreValidator fornitoreValidator;
 
 	@Autowired
-	private FornitoreServices fornitoreService;			//crea classe
+	private FornitoreServices fornitoreService;
 
-	@RequestMapping(value = "/fornitore", method = RequestMethod.POST)			//crea html
-	public String newFornitore(@Valid @ModelAttribute("Fornitore") Fornitore fornitore,
+	@RequestMapping(value = "/fornitore", method = RequestMethod.POST)
+	public String newFornitore(@Valid @ModelAttribute("fornitore") Fornitore fornitore,			//forse "fornitore" con la maiuscola
 			Model model, BindingResult bindingResult) {
 		this.fornitoreValidator.validate(fornitore, bindingResult);
 
 		if(!bindingResult.hasErrors()) {
 			this.fornitoreService.inserisci(fornitore);
-			model.addAttribute("fornitori", this.fornitoreService.tutti());		//crea html
+			model.addAttribute("fornitori", this.fornitoreService.tutti());
 			return "fornitori.html";
 		} else {
 			return "inserisciFornitore.html";
