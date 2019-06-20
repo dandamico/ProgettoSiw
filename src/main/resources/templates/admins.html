@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html" lang="it">
+
+<head>
+<meta charset="UTF-8" />
+<title>Lista di Admin</title>
+<meta name="description" content="admins" />
+<meta name="author" content="Riccardo Cicero, Daniele D'Amico, Federico Giuliana" />
+<link href="../static/css/admins.css"
+	th:href="@{/css/admins.css}" rel="stylesheet" />
+
+</head>
+<body>
+	<header>
+
+		<h1>
+			<a th:href="@{/}">FERRUCCIO</a>
+		</h1>
+
+	</header>
+
+	<div>
+		<h4>Lista di Admin</h4>
+	</div>
+
+	<ul>
+		<li th:each="admin : ${admins}"><a
+			th:href="@{'/admin' + '/' + ${admins.id}}"
+			th:text="${admin.nome}"> qui-va-nome </a></li>
+	</ul>
+
+
+</body>
+</html>

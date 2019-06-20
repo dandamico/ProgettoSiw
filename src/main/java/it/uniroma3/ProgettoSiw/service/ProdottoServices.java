@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.ProgettoSiw.model.Prodotto;
-import it.uniroma3.ProgettoSiw.storage.ProdottoRepository;
+import it.uniroma3.ProgettoSiw.repository.ProdottoRepository;
 
 @Service
 public class ProdottoServices {
@@ -16,8 +16,8 @@ public class ProdottoServices {
 	private ProdottoRepository prodottoRepository;
 	
 	@Transactional
-	public Prodotto inserisci(Prodotto prodotto) {
-		return prodottoRepository.save(prodotto);
+	public Prodotto inserisci(Prodotto foto) {
+		return prodottoRepository.save(foto);
 	}
 
 	@Transactional

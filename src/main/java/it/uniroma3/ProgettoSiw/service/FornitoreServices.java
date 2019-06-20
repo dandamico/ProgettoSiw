@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.ProgettoSiw.model.Fornitore;
-import it.uniroma3.ProgettoSiw.storage.FornitoreRepository;
+import it.uniroma3.ProgettoSiw.repository.FornitoreRepository;
+
 
 @Service
 public class FornitoreServices {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+<meta charset="UTF-8">
+<title>Registrazione </title>
+<meta name="description" content="login" />
+<meta name="author" content="Riccardo Cicero, Daniele D'Amico, Federico Giuliana" />
+<link href="../static/css/inserisciFornitore.css"
+	th:href="@{/css/inserisciFornitore.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+	<header>
+		
+		<h1>
+			<a th:href="@{/}">FERRUCCIO</a>
+		</h1>
+
+	</header>
+
+	<div class="sottotitolo">
+		<h2>Registrati come Amministratore:</h2>
+	</div>
+
+	<form th:action="@{/admin}" method="POST"
+		th:object="${admin}">
+		<article>
+			<div class="logintab">
+				Nome:&emsp;&ensp;&thinsp;&thinsp; <input type="text" name="nome"
+					placeholder="Nome" th:field="*{nome}" /> <span
+					th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span> <br>
+				Cognome:&nbsp; <input type="text" name="cognome"
+					placeholder="Cognome" th:field="*{cognome}" /> <span
+					th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
+				<br> Username: <input type="text" name="username"
+					placeholder="Username" th:field="*{username}" /> <span
+					th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+				<br> Password:&nbsp; <input type="password" name="password"
+					placeholder="Password" th:field="*{password}" /> <span
+					th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+				</span>
+				<br>
+				<button type="submit">Registrati</button>
+			</div>
+		</article>
+	</form>
+
+</body>
+
+</html>

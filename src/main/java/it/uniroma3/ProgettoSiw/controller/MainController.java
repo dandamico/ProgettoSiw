@@ -1,120 +1,56 @@
 package it.uniroma3.ProgettoSiw.controller;
 
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.uniroma3.ProgettoSiw.model.Admin;
+import it.uniroma3.ProgettoSiw.service.CategoriaServices;
+import it.uniroma3.ProgettoSiw.service.FornitoreServices;
+import it.uniroma3.ProgettoSiw.service.ProdottoServices;
 
-/**
- * The MainController is a Spring Boot Controller to handle
- * the generic interactions with the home pages, and that do not refer to specific entities
- */
+
 @Controller
 public class MainController {
 
-	public MainController() {
-		super();
-	}
+	@Autowired
+	private FornitoreServices fornitoreService;
+	
+	@Autowired
+	private ProdottoServices prodottoService;
 
-	/**
-	 * This method is called when a GET request is sent by the user to URL "/" or "/index".
-	 * This method prepares and dispatches the home view.
-	 *
-	 * @return the name of the home view
-	 */
-	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
-	public String index(Model model) {
-		return "home";
+	@Autowired
+	private CategoriaServices categoriaService;
+	
+	@RequestMapping(value = "/addAdmin", method = RequestMethod.GET)
+	public String addAdmin(Model model) {
+		model.addAttribute("admin", new Admin());
+		return "signupAdmin.html";
 	}
 	
-	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
-	public String index1(Model model) {
-		return "home";
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginAdmin(Model model) {
+		model.addAttribute("admin", new Admin());
+		return "login.html";
 	}
-
-	/**
-	 * This method is called when a GET request is sent by the user to URL "/fornitori".
-	 * This method prepares and dispatches the welcome view.
-	 *
-	 * @return the name of the fornitori view
-	 */
-	@RequestMapping(value = { "/fornitore" }, method = RequestMethod.GET)
-	public String fornitori(Model model) {
-		return "fornitore";
+	
+	@RequestMapping(value = "/visualizzaFornitori", method = RequestMethod.GET)
+	public String visualizzaFornitori(Model model) {
+		model.addAttribute("fornitori", this.fornitoreService.tutti());
+		return "fornitori.html";
 	}
-
-
-	/**
-	 * This method is called when a GET request is sent by the user to URL "/categoria".
-	 * This method prepares and dispatches the home view.
-	 *
-	 * @return the name of the categoria view
-	 */
-	@RequestMapping(value = { "/categoria" }, method = RequestMethod.GET)
-	public String categoria(Model model) {
-		return "categoria";
+	
+	@RequestMapping(value = "/visualizzaProdotti", method = RequestMethod.GET)
+	public String visualizzaProdotti(Model model) {
+		model.addAttribute("prodotti", this.prodottoService.tutti());
+		return "prodotti.html";
 	}
-
-	/**
-	 * This method is called when a GET request is sent by the user to URL "/prodotto".
-	 * This method prepares and dispatches the home view.
-	 *
-	 * @return the name of the prodotto view
-	 */
-	@RequestMapping(value = { "/prodotto" }, method = RequestMethod.GET)
-	public String prodotto(Model model) {
-		return "prodotto";
-	}
-
-
-	/**
-	 * This method is called when a GET request is sent by the user to URL "/welcome".
-	 * This method prepares and dispatches the welcome view.
-	 *
-	 * @return the name of the welcome view
-	 */
-	@RequestMapping(value = { "/paginaAdmin" }, method = RequestMethod.GET)
-	public String welcome(Model model) {
-		UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String role = details.getAuthorities().iterator().next().getAuthority();     // get first authority
-		model.addAttribute("username", details.getUsername());
-		model.addAttribute("role", role);
-
-		return "paginaAdmin";
-	}
-
-	/**
-	 * This method is called when a GET request is sent by the user to URL "/pagina".
-	 * This method prepares and dispatches the welcome view.
-	 *
-	 * @return the name of the welcome view
-	 */
-	@RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
-	public String Pagina(Model model) {
-		UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String role = details.getAuthorities().iterator().next().getAuthority();     // get first authority
-		model.addAttribute("username", details.getUsername());
-		model.addAttribute("role", role);
-
-		return "admin";
-	}
-
-	/**
-	 * This method is called when a GET request is sent by the user to URL "/admin".
-	 * This method prepares and dispatches the admin view.
-	 *
-	 * @return the name of the admin view
-	 */
-	@RequestMapping(value = { "/inserimentoProdotto" }, method = RequestMethod.GET)
-	public String admin(Model model) {
-		UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String role = details.getAuthorities().iterator().next().getAuthority();    // get first authority
-		model.addAttribute("username", details.getUsername());
-		model.addAttribute("role", role);
-
-		return "inserimentoProdotto";
+	
+	@RequestMapping(value = "/visualizzaCategorie", method = RequestMethod.GET)
+	public String visualizzaCategoria(Model model) {
+		model.addAttribute("categorie", this.categoriaService.tutti());
+		return "categorie.html";
 	}
 }

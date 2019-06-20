@@ -18,9 +18,8 @@ public class AdminValidator implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cognome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "required");
+		
 	}
 }

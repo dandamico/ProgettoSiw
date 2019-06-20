@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+<meta charset="UTF-8">
+<title>Inserimento Prodotto</title>
+<meta name="description" content="inserimento prodotto" />
+<meta name="author" content="Riccardo Cicero, Daniele D'Amico, Federico Giuliana" />
+<link href="../static/css/inserisciFornitore.css"
+	th:href="@{/css/inserisciFornitore.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+	<header>
+
+		<h1>
+			<a th:href="@{/}">FERRUCCIO</a>
+		</h1>
+	</header>
+
+	<div class="sottotitolo">
+		<h2>Inserisci l'id del fornitore, il prezzo e il nome del prodotto:</h2>
+	</div>
+
+	<form th:action="@{/prodotto}" method="POST"
+		th:object="${prodotto}">
+		<article>
+			<div class="logintab">
+				Id Fornitore: <input type="text" name="idFornitore"
+					placeholder="Id Fornitore" th:field="*{idFornitore}" /> <span
+					th:if="${#fields.hasErrors('idFornitore')}"
+					th:errors="*{idFornitore}"></span> 
+					Id Categoria: <input type="text" name="idCategoria"
+					placeholder="Id Categoria" th:field="*{idCategoria}" /> <span
+					th:if="${#fields.hasErrors('idCategoria')}"
+					th:errors="*{idCategoria}"></span> 
+					<br> Prezzo: <input
+					type="text" name="prezzo" placeholder="Prezzo"
+					th:field="*{prezzo}" /><span
+					th:if="${#fields.hasErrors('prezzo')}" th:errors="*{prezzo}">
+				</span> <br> Nome: <input type="text" name="nome" placeholder="Nome"
+					th:field="*{nome}" /> <span th:if="${#fields.hasErrors('nome')}"
+					th:errors="*{nome}"> </span>
+				<button type="submit">Inserisci</button>
+			</div>
+		</article>
+	</form>
+</body>
+</html>

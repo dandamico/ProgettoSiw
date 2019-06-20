@@ -4,31 +4,49 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "prodotti")
 public class Prodotto {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	String categoria;
+	String nome;
+	String prezzo;
 	private long idFornitore;
+	private long idCategoria;
 	
+	public long getIdCategoria() {
+		return idCategoria;
+	}
+	public void setIdCategoria(long idCategoria) {
+		this.idCategoria = idCategoria;
+	}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
 	}
-	public long getFornitore() {
+
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getPrezzo() {
+		return prezzo;
+	}
+	public void setPrezzo(String prezzo) {
+		this.prezzo = prezzo;
+	}
+	public long getIdFornitore() {
 		return idFornitore;
 	}
-	public void setFornitore(long idFornitore) {
+	public void setIdFornitore(long idFornitore) {
 		this.idFornitore = idFornitore;
-	}
-	public String getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
 	}	
 }

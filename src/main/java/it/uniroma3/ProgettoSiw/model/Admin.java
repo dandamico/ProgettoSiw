@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "admin")
+@Table(name = "admins")
 public class Admin {
 
 	@Id
@@ -31,22 +31,19 @@ public class Admin {
     @Column(name = "role")
     protected String role;
 	
-	/**
-     * Constructor
-     *
-     * @param id The id of this admin
-     * @param nome The name of this admin
-     * @param cognome The surname  of this admin
-     * @param username The username of this admin for authentication
-     * @param password The password of this admin for authentication
-     */
-	public Admin(Long id, String nome, String cognome, String username, String password, String role) {
+
+    
+	public Admin(Long id, String nome, String cognome, String username, String password) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.username = username;
         this.password = password;
-        this.role = role;
+    }
+	 /**
+     * Empty Constructor
+     */
+     public Admin() {
     }
 	
 	public long getId() {
@@ -85,4 +82,12 @@ public class Admin {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	
+	public boolean checkPassword(Admin admin) {
+		String passwordDaVerificare = admin.getPassword();
+		return this.password.equals(passwordDaVerificare);
+}
+	
+	
+	
 }
