@@ -18,6 +18,17 @@ public class Prodotto {
 	private long idFornitore;
 	private long idCategoria;
 	
+	
+	public Prodotto(String nome,String prezzo,Long idForn) {
+		this.nome=nome;
+		this.prezzo=prezzo;
+		this.idFornitore=idForn;
+		
+	}
+	
+	public Prodotto() {
+		
+	}
 	public long getIdCategoria() {
 		return idCategoria;
 	}

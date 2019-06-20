@@ -17,6 +17,15 @@ public class Fornitore {
 	private String nome;
 	private String cognome;
 	
+	public Fornitore(String nome,String cognome) {
+		this.nome=nome;
+		this.cognome=cognome;
+	}
+	
+	public Fornitore() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public long getId() {
 		return id;
 	}
