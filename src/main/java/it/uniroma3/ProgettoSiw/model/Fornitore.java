@@ -1,9 +1,5 @@
 package it.uniroma3.ProgettoSiw.model;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/Daniele
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +15,14 @@ public class Fornitore {
 	private long id;
 	private String nome;
 	private String cognome;
+	
+	public Fornitore(String nome,String cognome) {
+		this.nome=nome;
+		this.cognome=cognome;
+	}
+	
+	public Fornitore() {
+	}
 	
 	public long getId() {
 		return id;

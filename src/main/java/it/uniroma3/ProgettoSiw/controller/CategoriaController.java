@@ -40,11 +40,6 @@ public class CategoriaController {
 		}
 	}
 
-<<<<<<< HEAD
-	//il valore che ci aspettiamo nel parametro id Ã¨ quello specifico contenuto in value
-=======
-	//il valore che ci aspettiamo nel parametro id è quello specifico contenuto in value
->>>>>>> origin/Daniele
 	@RequestMapping(value = "/categoria/{id}", method = RequestMethod.GET)
 	public String getCategoria(@PathVariable ("id") Long id, Model model) {
 		if(id != null) {

@@ -7,10 +7,7 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import it.uniroma3.ProgettoSiw.model.Admin;
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/Daniele
 
 
 @Component

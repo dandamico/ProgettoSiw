@@ -1,4 +1,4 @@
-package it.uniroma3.ProgettoSiw.storage;
+package it.uniroma3.ProgettoSiw.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
